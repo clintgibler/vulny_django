@@ -96,6 +96,7 @@ def sql_injector(request, ):
     else:
         sql_str = request.GET.get('sql')
     prepared_sql = "select questions_text from polls_question where id = " + sql_str + ""
+    print("ran")
     cursor = connection.cursor()
     cursor.execute(prepared_sql)
     sql_results = cursor.fetchall()
